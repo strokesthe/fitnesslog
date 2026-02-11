@@ -4,18 +4,18 @@ import './App.css'
 function App() {
   const [sportsList, addSportsList] = useState([])
   const [sportsType, addSportsType] = useState("")
-  const [sportsDuration, addSportsDuration] =useState("")
+  const [sportsDuration, addSportsDuration] = useState("")
 
-  const handleSportsTypeInput = (event) =>{
+  const handleSportsTypeInput = (event) => {
     addSportsType(event.target.value)
   }
 
-  const handleSportsDurationInput = (event) =>{
+  const handleSportsDurationInput = (event) => {
     addSportsDuration(event.target.value)
   }
 
-  const saveSportsUnit = () =>{
-    const sportsUnit ={
+  const saveSportsUnit = () => {
+    const sportsUnit = {
       id: Date.now(),
       type: sportsType,
       duration: parseInt(sportsDuration)
@@ -36,25 +36,28 @@ function App() {
       <h1>Fitnesslog</h1>
 
       <input
-      type='text'
-      placeholder='Sportart'
-      value={sportsType}
-      onChange={handleSportsTypeInput}
+        type='text'
+        placeholder='Sportart'
+        value={sportsType}
+        onChange={handleSportsTypeInput}
       />
 
       <input
-      type='number'
-      placeholder='Sportdauer'
-      value={sportsDuration}
-      onChange={handleSportsDurationInput}
+        type='number'
+        placeholder='Sportdauer'
+        value={sportsDuration}
+        onChange={handleSportsDurationInput}
       />
       <button onClick={saveSportsUnit}>Sporteinheit hinzufügen</button>
 
-     
 
-
-
-
+      <div>
+        {sportsList.map((item) => (
+          <div key={item.id}>
+            {item.type} : {item.duration} Minuten
+          </div>
+        ))}
+      </div>
 
 
     </div>
