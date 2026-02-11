@@ -5,38 +5,96 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  font-family: sans-serif;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header {
+  display: flex;
+  align-items: center; 
+  gap: 10px;           
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.shiny-logo {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
 }
 
-.card {
-  padding: 2em;
+.shiny-logo::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.5) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: shine 5s infinite;
 }
 
-.read-the-docs {
-  color: #888;
+@keyframes shine {
+  0% { left: -75%; }
+  100% { left: 205%; }
+}
+
+
+.input-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+
+.input-container input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+
+.input-container button {
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.input-container button:hover {
+  background-color: #45a049;
+}
+
+
+.list-container {
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+
+  padding-top: 10px;
+}
+
+.list-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #13c30d;
+  border-radius: 10px;
+
 }
