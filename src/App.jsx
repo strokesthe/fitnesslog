@@ -33,6 +33,8 @@ function App() {
 
     <div>
 
+      <h1>Fitnesslog</h1>
+
       <input
       type='text'
       placeholder='Sportart'
