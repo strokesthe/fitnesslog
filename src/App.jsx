@@ -14,6 +14,17 @@ function App() {
     addSportsDuration(event.target.value)
   }
 
+  const saveSportsUnit = () =>{
+    const sportsUnit ={
+      id: Date.now(),
+      type: sportsType,
+      duration: parseInt(sportsDuration)
+    }
+    addSportsList([...sportsList, sportsUnit])
+    addSportsType("")
+    addSportsDuration("")
+  }
+
 
 
 
@@ -25,14 +36,19 @@ function App() {
       <input
       type='text'
       placeholder='Sportart'
+      value={sportsType}
       onChange={handleSportsTypeInput}
       />
 
       <input
       type='number'
       placeholder='Sportdauer'
+      value={sportsDuration}
       onChange={handleSportsDurationInput}
       />
+      <button onClick={saveSportsUnit}>Sporteinheit hinzufügen</button>
+
+     
 
 
 

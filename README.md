@@ -4,6 +4,13 @@ A simple React app to track sports activities.
 
 
 
+
+## Features
+
+- Add a new sport activity (type & duration)
+
+
+
 ## Installation
 
 1. Clone the repository:
